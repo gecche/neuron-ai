@@ -99,7 +99,7 @@ trait HandleChat
         if (isset($result['usage'])) {
             $usage = $result['usage'];
 
-            $message->setUsage(new Usage($usage['input_tokens'], $usage['output_tokens']));
+            $message->setUsage(new Usage($usage['input_tokens'], $usage['output_tokens'], $this->getModel()));
 
             // Attach Anthropic-specific cache metrics as metadata (supports both API formats)
             $cacheCreation = $usage['cache_creation'] ?? [];

@@ -111,7 +111,8 @@ class HistoryTrimmer implements HistoryTrimmerInterface
                 $normalizedInputTokens = max(0, $usage->inputTokens - $trimmedTokens);
                 $message->setUsage(new Usage(
                     $normalizedInputTokens,
-                    $usage->outputTokens
+                    $usage->outputTokens,
+                    $usage->model,
                 ));
             }
         }

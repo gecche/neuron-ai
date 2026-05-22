@@ -22,6 +22,7 @@ use NeuronAI\Providers\AIProviderInterface;
 use NeuronAI\Providers\MessageMapperInterface;
 use NeuronAI\Providers\SSEParser;
 use NeuronAI\Providers\ToolMapperInterface;
+use NeuronAI\Providers\AIProviderTrait;
 use NeuronAI\UniqueIdGenerator;
 
 use function end;
@@ -30,6 +31,7 @@ use function is_string;
 class OpenAIImage implements AIProviderInterface
 {
     use HasHttpClient;
+    use AIProviderTrait;
 
     /**
      * The main URL of the provider API.
@@ -107,7 +109,8 @@ class OpenAIImage implements AIProviderInterface
             $result->setUsage(
                 new Usage(
                     $response['usage']['input_tokens'],
-                    $response['usage']['output_tokens']
+                    $response['usage']['output_tokens'],
+                    $this->getModel()
                 )
             );
         }

@@ -11,6 +11,7 @@ use NeuronAI\Providers\AIProviderInterface;
 use NeuronAI\Providers\HandleWithTools;
 use NeuronAI\Providers\MessageMapperInterface;
 use NeuronAI\Providers\ToolMapperInterface;
+use NeuronAI\Providers\AIProviderTrait;
 use NeuronAI\Tools\ToolInterface;
 
 use function count;
@@ -23,6 +24,7 @@ class BedrockRuntime implements AIProviderInterface
     use HandleChat;
     use HandleStream;
     use HandleStructured;
+    use AIProviderTrait;
 
     protected ?string $system = null;
 

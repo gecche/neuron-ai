@@ -65,4 +65,9 @@ interface AIProviderInterface
      * or customize HTTP behavior (retry logic, caching, etc.).
      */
     public function setHttpClient(HttpClientInterface $client): AIProviderInterface;
+
+    /*
+     * The currently setted model.
+     */
+    public function getModel(): string|null;
 }

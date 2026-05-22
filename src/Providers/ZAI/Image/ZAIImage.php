@@ -20,12 +20,14 @@ use NeuronAI\HttpClient\HttpRequest;
 use NeuronAI\Providers\AIProviderInterface;
 use NeuronAI\Providers\MessageMapperInterface;
 use NeuronAI\Providers\ToolMapperInterface;
+use NeuronAI\Providers\AIProviderTrait;
 
 use function end;
 
 class ZAIImage implements AIProviderInterface
 {
     use HasHttpClient;
+    use AIProviderTrait;
 
     /**
      * The main URL of the provider API.
@@ -90,7 +92,8 @@ class ZAIImage implements AIProviderInterface
             $result->setUsage(
                 new Usage(
                     $response['usage']['prompt_tokens'],
-                    $response['usage']['completion_tokens']
+                    $response['usage']['completion_tokens'],
+                    $this->getModel()
                 )
             );
         }

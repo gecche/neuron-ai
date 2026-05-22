@@ -64,7 +64,10 @@ trait HandleChat
 
         if (isset($result['usage'])) {
             $response->setUsage(
-                new Usage($result['usage']['prompt_tokens'], $result['usage']['completion_tokens'])
+                new Usage(
+                    $result['usage']['prompt_tokens'],
+                    $result['usage']['completion_tokens'],
+                    $this->getModel())
             );
         }
 

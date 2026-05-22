@@ -16,6 +16,7 @@ use NeuronAI\Providers\MessageMapperInterface;
 use NeuronAI\Providers\OpenAI\HandleStructured;
 use NeuronAI\Providers\OpenAI\ToolMapper;
 use NeuronAI\Providers\ToolMapperInterface;
+use NeuronAI\Providers\AIProviderTrait;
 use NeuronAI\Tools\ToolInterface;
 
 use function array_map;
@@ -29,6 +30,7 @@ class Mistral implements AIProviderInterface
     use HandleChat;
     use HandleStream;
     use HandleStructured; // From OpenAI
+    use AIProviderTrait;
 
     protected string $baseUri = 'https://api.mistral.ai/v1';
 

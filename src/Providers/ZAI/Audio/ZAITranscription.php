@@ -21,6 +21,7 @@ use NeuronAI\Providers\AIProviderInterface;
 use NeuronAI\Providers\MessageMapperInterface;
 use NeuronAI\Providers\SSEParser;
 use NeuronAI\Providers\ToolMapperInterface;
+use NeuronAI\Providers\AIProviderTrait;
 use NeuronAI\UniqueIdGenerator;
 
 use function end;
@@ -29,6 +30,7 @@ use function fopen;
 class ZAITranscription implements AIProviderInterface
 {
     use HasHttpClient;
+    use AIProviderTrait;
 
     /**
      * The main URL of the provider API.

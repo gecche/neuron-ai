@@ -67,7 +67,10 @@ trait HandleChat
 
         if (isset($response['prompt_eval_count']) && isset($response['eval_count'])) {
             $message->setUsage(
-                new Usage($response['prompt_eval_count'], $response['eval_count'])
+                new Usage(
+                    $response['prompt_eval_count'],
+                    $response['eval_count'],
+                    $this->getModel())
             );
         }
 

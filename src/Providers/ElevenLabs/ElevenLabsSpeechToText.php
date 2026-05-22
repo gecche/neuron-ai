@@ -16,6 +16,7 @@ use NeuronAI\HttpClient\HttpRequest;
 use NeuronAI\Providers\AIProviderInterface;
 use NeuronAI\Providers\MessageMapperInterface;
 use NeuronAI\Providers\ToolMapperInterface;
+use NeuronAI\Providers\AIProviderTrait;
 
 use function end;
 use function fopen;
@@ -23,6 +24,7 @@ use function fopen;
 class ElevenLabsSpeechToText implements AIProviderInterface
 {
     use HasHttpClient;
+    use AIProviderTrait;
 
     protected string $baseUri = 'https://api.elevenlabs.io/v1/speech-to-text';
 

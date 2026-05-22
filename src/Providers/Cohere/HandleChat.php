@@ -32,7 +32,8 @@ trait HandleChat
             $response->setUsage(
                 new Usage(
                     $result['usage']['tokens']['input_tokens'] ?? 0,
-                    $result['usage']['tokens']['output_tokens'] ?? 0
+                    $result['usage']['tokens']['output_tokens'] ?? 0,
+                    $this->getModel()
                 )
             );
         }

@@ -19,6 +19,7 @@ use NeuronAI\HttpClient\HttpRequest;
 use NeuronAI\Providers\AIProviderInterface;
 use NeuronAI\Providers\MessageMapperInterface;
 use NeuronAI\Providers\ToolMapperInterface;
+use NeuronAI\Providers\AIProviderTrait;
 use NeuronAI\UniqueIdGenerator;
 
 use function base64_encode;
@@ -27,6 +28,7 @@ use function end;
 class ElevenLabsTextToSpeech implements AIProviderInterface
 {
     use HasHttpClient;
+    use AIProviderTrait;
 
     protected string $baseUri = 'https://api.elevenlabs.io/v1/text-to-speech';
 

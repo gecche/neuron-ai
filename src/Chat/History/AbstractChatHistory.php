@@ -303,7 +303,7 @@ abstract class AbstractChatHistory implements ChatHistoryInterface
             }
             if ($key === 'usage') {
                 $item->setUsage(
-                    new Usage($message['usage']['input_tokens'], $message['usage']['output_tokens'])
+                    new Usage($message['usage']['input_tokens'], $message['usage']['output_tokens'], $message['usage']['model'])
                 );
                 continue;
             }

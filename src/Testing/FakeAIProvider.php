@@ -13,6 +13,7 @@ use NeuronAI\Providers\AIProviderInterface;
 use NeuronAI\Providers\HandleWithTools;
 use NeuronAI\Providers\MessageMapperInterface;
 use NeuronAI\Providers\ToolMapperInterface;
+use NeuronAI\Providers\AIProviderTrait;
 use NeuronAI\StaticConstructor;
 use NeuronAI\Tools\ProviderToolInterface;
 use NeuronAI\Tools\ToolInterface;
@@ -32,6 +33,7 @@ class FakeAIProvider implements AIProviderInterface
 {
     use StaticConstructor;
     use HandleWithTools;
+    use AIProviderTrait;
 
     protected ?string $systemPrompt = null;
 

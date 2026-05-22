@@ -15,6 +15,7 @@ use NeuronAI\Providers\HandleWithTools;
 use NeuronAI\HttpClient\HasHttpClient;
 use NeuronAI\Providers\MessageMapperInterface;
 use NeuronAI\Providers\ToolMapperInterface;
+use NeuronAI\Providers\AIProviderTrait;
 use NeuronAI\Tools\ToolInterface;
 
 use function array_map;
@@ -28,6 +29,7 @@ class Gemini implements AIProviderInterface
     use HandleChat;
     use HandleStream;
     use HandleStructured;
+    use AIProviderTrait;
 
     /**
      * The main URL of the provider API.
