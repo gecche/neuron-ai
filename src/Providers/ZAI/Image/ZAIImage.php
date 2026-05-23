@@ -93,7 +93,8 @@ class ZAIImage implements AIProviderInterface
                 new Usage(
                     $response['usage']['prompt_tokens'],
                     $response['usage']['completion_tokens'],
-                    $this->getModel()
+                    $this->getModel(),
+                    static::class
                 )
             );
         }

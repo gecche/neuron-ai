@@ -110,7 +110,8 @@ class OpenAIImage implements AIProviderInterface
                 new Usage(
                     $response['usage']['input_tokens'],
                     $response['usage']['output_tokens'],
-                    $this->getModel()
+                    $this->getModel(),
+                    static::class
                 )
             );
         }

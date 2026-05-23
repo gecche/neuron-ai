@@ -70,7 +70,9 @@ trait HandleChat
                 new Usage(
                     $response['prompt_eval_count'],
                     $response['eval_count'],
-                    $this->getModel())
+                    $this->getModel(),
+                    static::class
+                )
             );
         }
 

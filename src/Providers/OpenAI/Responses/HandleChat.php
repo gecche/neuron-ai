@@ -71,7 +71,9 @@ trait HandleChat
         $usage = new Usage(
             $result['usage']['input_tokens'] ?? 0,
             $result['usage']['output_tokens'] ?? 0,
-            $this->getModel());
+            $this->getModel(),
+            static::class
+        );
 
         if ($toolCalls !== []) {
             $message = $this->createToolCallMessage($toolCalls)->setUsage($usage);

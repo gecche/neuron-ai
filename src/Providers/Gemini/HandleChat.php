@@ -151,7 +151,8 @@ trait HandleChat
                 new Usage(
                     $result['usageMetadata']['promptTokenCount'],
                     $result['usageMetadata']['candidatesTokenCount'] ?? 0,
-                    $this->getModel()
+                    $this->getModel(),
+                    static::class
                 )
             );
         }

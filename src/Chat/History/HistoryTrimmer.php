@@ -113,6 +113,7 @@ class HistoryTrimmer implements HistoryTrimmerInterface
                     $normalizedInputTokens,
                     $usage->outputTokens,
                     $usage->model,
+                    $usage->provider,
                 ));
             }
         }

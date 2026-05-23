@@ -98,7 +98,9 @@ trait HandleChat
                 new Usage(
                     $result['usage']['prompt_tokens'],
                     $result['usage']['completion_tokens'],
-                    $this->getModel())
+                    $this->getModel(),
+                    static::class
+                )
             );
         }
 
